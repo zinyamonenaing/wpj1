@@ -1,0 +1,53 @@
+# django install
+pip install django 
+
+# check django version
+python -m django --version 
+
+# starting project 
+django-admin startproject ပေးချင်တဲ့pjname
+django-admin startproject wpj1 
+
+# cd into ပေးခဲ့တဲ့pjname
+cd wpj1 
+
+# show files and folder 
+dir or ls
+
+# ready or not! server run
+python manage.py runserver
+
+# server stop
+ctrl + c
+
+# create application 
+python manage.py startapp ပေးချင်တဲ့appname
+python manage.py startapp record
+
+# register app in pj settings Install App
+
+# set up database file in django
+python manage.py migrate 
+
+# create model 
+class Record(models.Model):
+	title = models.CharField(max_length=255)
+	content = models.TextField()
+	date = models.DateField()
+
+# make migrations 
+python manage.py makemigrations 
+
+# migrate 
+python manage.py migrate 
+
+# register in admin panel
+from .models import Record 
+admin.site.register(Record)
+
+# create admin account 
+python manage.py createsuperuser
+
+# server run
+python manage.py runserver
+
